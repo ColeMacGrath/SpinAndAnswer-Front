@@ -1,0 +1,293 @@
+@import url('https://fonts.googleapis.com/css?family=Pacifico');
+
+.section {
+	max-width: auto;
+	margin:0 auto;
+	padding:6% 2%;
+}
+
+.grid {
+	margin: 20px 0 0 0;
+	padding: 0;
+	list-style: none;
+	display: block;
+	text-align: center;
+	width: 100%;
+}
+
+.grid:after {
+	clear: both;
+}
+
+.grid:after,
+.box:before {
+	content: '';
+    display: table;
+}
+
+.grid li {
+	width: 328px;
+	height: 328px;
+	display: inline-block;
+	margin: 20px;
+}
+
+.box {
+	width: 100%;
+	height: 100%;
+	position: relative;
+	cursor: pointer;
+    border-radius: 10px;
+    -webkit-transition: 0.3s ease-in-out, 
+    -webkit-transform 0.3s ease-in-out;
+	-moz-transition:  0.3s ease-in-out, 
+    -moz-transform 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out, 
+    transform 0.3s ease-in-out, ;
+}
+
+.box:hover {
+	transform: scale(1.05); 
+}
+
+.img-1 { 
+ background: 
+    linear-gradient(
+      rgba(0, 0, 0, 0.50), 
+      rgba(0, 0, 0, 0.10)
+    ),
+    /* bottom, image */
+    url(../images/linux.png);
+}
+
+.img-2 { 
+ background: 
+    linear-gradient(
+      rgba(0, 0, 0, 0.50), 
+      rgba(0, 0, 0, 0.10)
+    ),
+    /* bottom, image */
+    url(../images/databases.JPG);
+}
+
+.img-3 { 
+ background: 
+    linear-gradient(
+      rgba(0, 0, 0, 0.50), 
+      rgba(0, 0, 0, 0.10)
+    ),
+    /* bottom, image */
+    url(../images/programming.jpg);
+}
+
+.img-4 { 
+ background: 
+    linear-gradient(
+      rgba(0, 0, 0, 0.50), 
+      rgba(0, 0, 0, 0.10)
+    ),
+    /* bottom, image */
+    url(../images/software.jpg);
+}
+
+.img-5 { 
+ background: 
+    linear-gradient(
+      rgba(0, 0, 0, 0.50), 
+      rgba(0, 0, 0, 0.10)
+    ),
+    /* bottom, image */
+    url(../images/networking.png);
+}
+
+.img-6 { 
+ background: 
+    linear-gradient(
+      rgba(0, 0, 0, 0.50), 
+      rgba(0, 0, 0, 0.10)
+    ),
+    /* bottom, image */
+    url(../images/mobile.jpeg);
+}
+
+.info {
+	position: absolute;
+}
+
+.info h3 {
+    font-family: 'Pacifico', cursive;
+    font-weight: 400;
+	color: #fff;
+	font-size: 42px;
+	margin: 0 30px;
+	padding: 100px 0 0 0;
+	line-height:1.5;
+}
+
+.info p {
+    font-family: 'Source Sans Pro', sans-serif;
+	color: #fff;
+	padding: 4px 5px;
+	margin: 0 30px;
+	font-size: 25px;
+	line-height:1;
+}
+
+body {
+    background-image: url(../images/back-2.jpg);
+    width: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+header{
+  width: 100%;
+  color: #fff;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  align-content: center;
+  justify-content: space-between;
+  background-color: rgba(0, 0, 0,.3);
+  padding: 1%;
+}
+header h1{
+  margin-left: 30px;
+  font-family: montez;
+  font-size: 30px;
+}
+header a{
+  margin-right: 30px;
+  text-align: center;
+  text-decoration: none;
+  color: #fff;
+  font-size: 25px;
+  transition: all ease 300ms;
+}
+header a:hover{
+  color: rgb(180, 210, 212);
+}
+
+/* Search Bar */
+*, div {
+  box-sizing: border-box;
+}
+
+.search-bar {
+  float: left;
+  width: 100%;
+  height: 80px;
+  background-color: rgba(0, 0, 0,.3);
+  padding: 15px;
+  display: flex;
+  align-items: center;
+  box-shadow: 0 0px 0 0px rgba(0, 0, 0, 0.1);
+}
+.search-bar form {
+  float: left;
+  width: 100%;
+  height: 50px;
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+    background-color: red;
+}
+
+.search-bar a.logo {
+  display: flex;
+  flex: 1 1 auto;
+  order: 0;
+  width: 100%;
+  height: 100%;
+  max-width: 80px;
+  margin-right: 10px;
+  transition: all 0.05s ease-in-out;
+  visibility: visible;
+  opacity: 1;
+}
+.search-bar .search {
+  flex: 1 1 auto;
+  order: 2;
+  outline: none;
+  border: none;
+  border-radius: 0;
+  background: #fff;
+  padding: 10px;
+  font-family: 'Roboto', sans-serif;
+  height: 50px;
+  transition: all 0.05s ease-in-out;
+  -webkit-appearance: none;
+}
+.search-bar .search:focus {
+  height: 80px;
+  margin-left: -15px;
+  padding: 10px 15px;
+}
+.search-bar .search:focus + .go {
+  height: 80px;
+  margin-right: -15px;
+  max-width: 80px;
+  color: #533687;
+}
+.search-bar .search:focus + .go + a.logo {
+  visibility: hidden;
+  opacity: 0;
+  max-width: 0px;
+  margin-right: 0;
+}
+.search-bar .go {
+  flex: 1 1 auto;
+  order: 3;
+  max-width: 50px;
+  display: inline-block;
+  border: none;
+  background: #fff;
+  color: #ccc;
+  height: 50px;
+  transition: all 0.05s ease-in-out;
+  font-size: 21px;
+  outline: none;
+}
+
+/* Filter */
+.dropbtn {
+    background-color: #3498DB;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+		width: 60px;
+}
+
+.dropbtn:hover, .dropbtn:focus {
+    background-color: #2980B9;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 160px;
+    overflow: auto;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown a:hover {background-color: #ddd;}
+
+.show {display: block;}
+

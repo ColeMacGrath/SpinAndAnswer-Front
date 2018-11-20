@@ -1,0 +1,100 @@
+body{
+  margin: 0;
+  padding: 0;
+  background: url(back.jpg) no-repeat;
+  background-size: auto;
+}
+
+.name {
+    margin-top: 0%;
+}
+
+.box{
+  width: 450px;
+  background: rgba(0, 0, 0, 0.4);
+  padding: 40px;
+  text-align: center;
+  margin: auto;
+  margin-top: 5%;
+  color: white;
+  font-family: 'Century Gothic',sans-serif;
+}
+.box-img{
+  border-radius: 50%;
+  width: 200px;
+  height: 200px;
+}
+.box h1{
+  margin-bottom: 0;
+  font-size: 40px;
+  letter-spacing: 4px;
+  font-weight: 100;
+}
+.box h5{
+  margin-top: 0%;
+  margin-bottom: 3%;
+  font-size: 20px;
+  letter-spacing: 3px;
+  font-weight: 100;
+}
+.box p{
+  text-align: justify;
+}
+ul{
+  margin: 0;
+  padding: 0;
+}
+.box li{
+  display: inline-block;
+  margin: 6px;
+  list-style: none;
+}
+.box li a{
+  color: white;
+  text-decoration: none;
+  font-size: 60px;
+  transition: all ease-in-out 250ms;
+}
+.box li a:hover{
+  color: #b9b9b9;
+}
+.back {
+    padding: 1%;
+}
+.mail .icon-gmail {
+  font-size: 300%;
+  margin-top: 0;
+  margin-bottom: 0; 
+}
+
+.icon-add {
+  font-size: 300%;
+  color: darkcyan;
+}
+
+header{
+  width: 100%;
+  color: #fff;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  align-content: center;
+  justify-content: space-between;
+  background-color: rgba(0, 0, 0,.3)
+}
+header h1{
+  margin-left: 30px;
+  font-family: montez;
+  font-size: 30px;
+}
+header a{
+  margin-right: 30px;
+  text-align: center;
+  text-decoration: none;
+  color: #fff;
+  font-size: 25px;
+  transition: all ease 300ms;
+}
+header a:hover{
+  color: rgb(180, 210, 212);
+}
