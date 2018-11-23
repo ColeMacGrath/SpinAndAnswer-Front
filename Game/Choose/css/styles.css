@@ -39,22 +39,22 @@
 	position: relative;
 	cursor: pointer;
     border-radius: 10px;
-    -webkit-transition: 0.3s ease-in-out, 
+    -webkit-transition: 0.3s ease-in-out,
     -webkit-transform 0.3s ease-in-out;
-	-moz-transition:  0.3s ease-in-out, 
+	-moz-transition:  0.3s ease-in-out,
     -moz-transform 0.3s ease-in-out;
-    transition: all 0.3s ease-in-out, 
+    transition: all 0.3s ease-in-out,
     transform 0.3s ease-in-out, ;
 }
 
 .box:hover {
-	transform: scale(1.05); 
+	transform: scale(1.05);
 }
 
-.img-1 { 
- background: 
+.img-1 {
+ background:
     linear-gradient(
-      rgba(0, 0, 0, 0.50), 
+      rgba(0, 0, 0, 0.70),
       rgba(0, 0, 0, 0.10)
     ),
     /* bottom, image */
@@ -63,10 +63,10 @@
     background-size: cover;
 }
 
-.img-2 { 
- background: 
+.img-2 {
+ background:
     linear-gradient(
-      rgba(0, 0, 0, 0.50), 
+      rgba(0, 0, 0, 0.70),
       rgba(0, 0, 0, 0.10)
     ),
     /* bottom, image */
@@ -80,8 +80,8 @@
 }
 
 .info h3 {
-    font-family: 'Pacifico', cursive;
-    font-weight: 400;
+  font-family: 'Pacifico', cursive;
+  font-weight: 400;
 	color: #fff;
 	font-size: 42px;
 	margin: 0 30px;
@@ -90,7 +90,7 @@
 }
 
 .info p {
-    font-family: 'Source Sans Pro', sans-serif;
+  font-family: 'Source Sans Pro', sans-serif;
 	color: #fff;
 	padding: 4px 5px;
 	margin: 0 30px;
@@ -128,4 +128,31 @@ header a{
 }
 header a:hover{
   color: rgb(180, 210, 212);
+}
+
+/* Mobile Styles */
+@media only screen and (max-width: 570px) {
+	.grid li {
+		width: 300px;
+		height: 250px;
+	}
+	.info h3 {
+		font-size: 25px;
+	}
+	.info p {
+		font-size: 15px;
+	}
+}
+
+@media only screen and (min-width: 571px) and (max-width: 800px) {
+	.grid li {
+		width: 500px;
+		height: 300px;
+	}
+	.info h3 {
+		font-size: 35px;
+	}
+	.info p {
+		font-size: 22px;
+	}
 }

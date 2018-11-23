@@ -1,5 +1,10 @@
+var inputElement = document.getElementsByClassName('dropbtn')
+var dropdown = document.getElementById('myDropdown');
+
+document.addEventListener('click', myFunction);
+
 function myFunction() {
-    document.getElementById("myDropdown").classList.toggle("show");
+    dropdown.classList.toggle("show");
 }
 
 window.onclick = function(event) {

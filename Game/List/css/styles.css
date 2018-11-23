@@ -38,72 +38,72 @@
 	position: relative;
 	cursor: pointer;
     border-radius: 10px;
-    -webkit-transition: 0.3s ease-in-out, 
+    -webkit-transition: 0.3s ease-in-out,
     -webkit-transform 0.3s ease-in-out;
-	-moz-transition:  0.3s ease-in-out, 
+	-moz-transition:  0.3s ease-in-out,
     -moz-transform 0.3s ease-in-out;
-    transition: all 0.3s ease-in-out, 
+    transition: all 0.3s ease-in-out,
     transform 0.3s ease-in-out, ;
 }
 
 .box:hover {
-	transform: scale(1.05); 
+	transform: scale(1.05);
 }
 
-.img-1 { 
- background: 
+.img-1 {
+ background:
     linear-gradient(
-      rgba(0, 0, 0, 0.50), 
+      rgba(0, 0, 0, 0.50),
       rgba(0, 0, 0, 0.10)
     ),
     /* bottom, image */
     url(../images/linux.png);
 }
 
-.img-2 { 
- background: 
+.img-2 {
+ background:
     linear-gradient(
-      rgba(0, 0, 0, 0.50), 
+      rgba(0, 0, 0, 0.50),
       rgba(0, 0, 0, 0.10)
     ),
     /* bottom, image */
     url(../images/databases.JPG);
 }
 
-.img-3 { 
- background: 
+.img-3 {
+ background:
     linear-gradient(
-      rgba(0, 0, 0, 0.50), 
+      rgba(0, 0, 0, 0.50),
       rgba(0, 0, 0, 0.10)
     ),
     /* bottom, image */
     url(../images/programming.jpg);
 }
 
-.img-4 { 
- background: 
+.img-4 {
+ background:
     linear-gradient(
-      rgba(0, 0, 0, 0.50), 
+      rgba(0, 0, 0, 0.50),
       rgba(0, 0, 0, 0.10)
     ),
     /* bottom, image */
     url(../images/software.jpg);
 }
 
-.img-5 { 
- background: 
+.img-5 {
+ background:
     linear-gradient(
-      rgba(0, 0, 0, 0.50), 
+      rgba(0, 0, 0, 0.50),
       rgba(0, 0, 0, 0.10)
     ),
     /* bottom, image */
     url(../images/networking.png);
 }
 
-.img-6 { 
- background: 
+.img-6 {
+ background:
     linear-gradient(
-      rgba(0, 0, 0, 0.50), 
+      rgba(0, 0, 0, 0.50),
       rgba(0, 0, 0, 0.10)
     ),
     /* bottom, image */
@@ -134,7 +134,7 @@
 }
 
 body {
-    background-image: url(../images/back-2.jpg);
+    background-image: url(../images/background.jpeg);
     width: 100%;
     background-repeat: no-repeat;
     background-size: cover;
@@ -250,7 +250,6 @@ header a:hover{
   outline: none;
 }
 
-/* Filter */
 .dropbtn {
     background-color: #3498DB;
     color: white;
@@ -290,4 +289,3 @@ header a:hover{
 .dropdown a:hover {background-color: #ddd;}
 
 .show {display: block;}
-

@@ -23,7 +23,7 @@ h1, h2, h3, h4, h5, h6 {
 .contenedor {
   margin-top: 20;
   margin: auto;
-  width: 90%;   
+  width: 90%;
 }
 /*
 .main .contenedor {
@@ -136,7 +136,7 @@ h1, h2, h3, h4, h5, h6 {
   margin-left: 40;
   margin-right: 40;
 }
-/*Estilos 
+/*Estilos
 de las categorias */
 
 .section__titulo {
@@ -152,7 +152,7 @@ de las categorias */
 .categorias__columna1, .categorias__columna2,
 .categorias__columna3 {
   position: relative;
-  
+
   margin-bottom: 30px;
   display: flex;
   justify-content: space-between;
@@ -308,14 +308,14 @@ de las categorias */
     text-align: justify;
   }
   .section__titulo {
-     margin-top: 50; 
-     margin-bottom: 50; 
+     margin-top: 50;
+     margin-bottom: 50;
   }
   .categorias {
     display:flex;
     justify-content: space-between;
     flex-wrap: wrap;
-  } 
+  }
   .categorias__columna2 {
      display: none;
   }
@@ -342,7 +342,7 @@ de las categorias */
   .info, .categorias {
     display: flex;
     justify-content: space-between;
-    /*Poner las columnas arriba del banner 
+    /*Poner las columnas arriba del banner
     margin-top: -80px; */
   }
   .info__columna {
@@ -396,7 +396,7 @@ de las categorias */
   .info, .categorias {
     display: flex;
     justify-content: space-between;
-    /*Poner las columnas arriba del banner 
+    /*Poner las columnas arriba del banner
     margin-top: -80px; */
   }
   .info__columna {
@@ -425,4 +425,3 @@ de las categorias */
     margin: 0 10px;
   }
 }
-
