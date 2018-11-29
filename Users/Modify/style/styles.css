@@ -4,7 +4,7 @@
   font-family: Josefin Sans;
 }
 .contenedor{
-  background-image: url(img/back.jpg);
+  background-image: url(../img/back.jpg);
   background-size: cover;
   background-repeat: no-repeat;
   display: flex;
@@ -40,7 +40,7 @@ header a{
 header a:hover{
   color: rgb(180, 210, 212);
 }
-.Register{
+.Modify{
   margin-top: 130px;
   margin-bottom: 250px;
   display: flex;
@@ -53,6 +53,7 @@ header a:hover{
  padding: 1%;
 }
 .wallpaper{
+  height: 100%;
   width: 100%;
   background-color: rgba(0, 0, 0, 0.3);
   margin:0;
@@ -62,13 +63,11 @@ header a:hover{
   align-content: center;
   border-radius: 5px;
 }
-.imagen {
-  
-}
 .wallpaper img{
   margin-top: -75px;
   margin-bottom: 40px;
   width: 25%;
+  height: 25%;
   border-radius: 50%;
   border: solid #fff 5px;
 }

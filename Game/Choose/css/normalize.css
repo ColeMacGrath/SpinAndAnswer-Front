@@ -19,7 +19,7 @@ html{
 body{
     margin:0
 }
- menu,article,aside,details,footer,header,nav,section{
+menu,article,aside,details,footer,header,nav,section{
     display:block
 }
 h1{
