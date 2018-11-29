@@ -1,3 +1,9 @@
+/* FIXME acomodar las tabulaciones */
+/* FIXME no usar reglas de una sola linea */
+/* FIXME remover lineas vacias extras */
+/* FIXME las reglas globales (asterico) deben ir preferentemente al inicio del CSS */
+/* FIXME para el selector multiple (coma) se recomienda brincar linea por cada uno */
+
 /* Header */
 header{
   width: 100%;
@@ -75,7 +81,7 @@ body {
 
 .card,
 .hover-shadow:hover {
-    
+
 	box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.2), 0 4px 20px 0 rgba(0, 0, 0, 0.19)
 }
 
@@ -148,7 +154,7 @@ button:hover {
     background-color: #fefefe;
     margin: 4% auto 15% auto;
     border: 1px solid #888;
-    width: 40%; 
+    width: 40%;
 	padding-bottom: 30px;
 }
 
@@ -169,7 +175,7 @@ button:hover {
     animation: zoom 0.6s
 }
 @keyframes zoom {
-    from {transform: scale(0)} 
+    from {transform: scale(0)}
     to {transform: scale(1)}
 }
 
