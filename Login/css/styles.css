@@ -4,8 +4,8 @@
   font-family: Josefin Sans;
 }
 .contenedor{
-  background-image: url(img/back.jpg);
-  background-size: auto;
+  background-image: url(../img/back.jpg);
+  background-size: cover;
   background-repeat: no-repeat;
   display: flex;
   flex-direction: column;
@@ -40,7 +40,7 @@ header a{
 header a:hover{
   color: rgb(180, 210, 212);
 }
-.reset {
+.login{
   margin-top: 130px;
   margin-bottom: 250px;
   display: flex;
@@ -54,6 +54,7 @@ header a:hover{
 }
 .wallpaper{
   width: 100%;
+  height: 100%;
   background-color: rgba(0, 0, 0, 0.3);
   margin:0;
   display: flex;
@@ -62,13 +63,12 @@ header a:hover{
   align-content: center;
   border-radius: 5px;
 }
-.imagen {
-  
-}
+
 .wallpaper img{
   margin-top: -75px;
   margin-bottom: 40px;
   width: 25%;
+  height: 25%;
   border-radius: 50%;
   border: solid #fff 5px;
 }

@@ -1,10 +1,11 @@
 *{
   margin: 0;
   padding: 0;
+  /* FIXME las fuentes de multiples palabras van entrecomilladas */
   font-family: Josefin Sans;
 }
 .contenedor{
-  background-image: url(img/back.jpg);
+  background-image: url(../img/back.jpg);
   background-size: cover;
   background-repeat: no-repeat;
   display: flex;
@@ -34,13 +35,14 @@ header a{
   text-align: center;
   text-decoration: none;
   color: #fff;
+  /* FIXME se recomienda usar las fuentes con tamaños relativos como em y mantener un tamaño base en el body */
   font-size: 25px;
   transition: all ease 300ms;
 }
 header a:hover{
   color: rgb(180, 210, 212);
 }
-.Register{
+.Add{
   margin-top: 130px;
   margin-bottom: 250px;
   display: flex;
@@ -62,8 +64,9 @@ header a:hover{
   align-content: center;
   border-radius: 5px;
 }
+/* FIXME no dejar selectores vacios */
 .imagen {
-  
+
 }
 .wallpaper img{
   margin-top: -75px;
@@ -103,9 +106,10 @@ header a:hover{
   color: #fff;
   border-top-right-radius: 5px;
   border-bottom-right-radius: 5px;
-  text-align: right;
+  text-align: left;
   transition: all 250ms ease;
 }
+/* FIXME si no es necesario ser tan especificos en los selectores, hay que evitarlo */
 .wallpaper form .inp:focus{
   outline:0px;
   background-color: rgba(255, 255, 255, .6);

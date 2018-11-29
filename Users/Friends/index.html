@@ -1,151 +1,147 @@
 <!DOCTYPE html>
 <html>
-<!-- FIXME falta la etiqueta head -->
-<title>Friends</title>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="styles/styles.css">
-<link rel="stylesheet" href="styles/normalize.css">
-<script src="js.js"></script>
+    <head>
+        <title>Friends</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="styles/styles.css">
+        <link rel="stylesheet" href="styles/normalize.css">
+    </head>
+    <body>
+        <header>
+            <a class="back" href="../../Main-Page/index.html">Home</a>
+        </header>
 
-<body>
+        <div class="search-bar">
+            <input type="search" class="search" placeholder="Search..." />
+            <div class="dropdown">
+                <input class="dropbtn" type="image" src="img/filtro.png" id="input">
+                <div id="myDropdown" class="dropdown-content">
+                    <a href="#">My Friends</a>
+                    <a href="#">Request</a>
+                    <a href="#">My Request</a>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <h2><br>My Friends</h2><br>
 
-    <header>
-        <a class="back" href="../../Main-Page/index.html">Home</a>
-      </header>
+            <ul class="ul card">
 
-    <div class="search-bar">
-      <input type="search" class="search" placeholder="Search..." />
-         <div class="dropdown">
-        <!-- FIXME los eventos de JS no deben estar en el html -->
-				<input class="dropbtn" type="image" src="filtro.png" onclick="myFunction()">
-  			<div id="myDropdown" class="dropdown-content">
-    		<a href="#">My Friends</a>
-    		<a href="#">Request</a>
-    		<a href="#">My Request</a>
-  		</div>
-</div>
-  </div>
+                <li class="bar">
+                    <span class="bar-item button white xlarge right" id="deleteButton">×</span>
+                    <!-- FIXME remover los estilos inline -->
+                    <img src="img/male-avatar.png" class="bar-item circle hide-small" style="width:85px">
+                    <div class="bar-item">
+                        <span class="large">Male placeholder</span><br>
+                        <span>male@mail.com</span>
+                    </div>
+                </li>
 
-<div class="container">
-  <h2><br>My Friends</h2><br>
+                <li class="bar">
+                    <span class="bar-item button white xlarge right" id="deleteButton">×</span>
+                    <img src="img/feame-avatar.png" class="bar-item circle hide-small" style="width:85px">
+                    <div class="bar-item">
+                        <span class="large">Female placeholder</span><br>
+                        <span>female@mail.com</span>
+                    </div>
+                </li>
 
-  <ul class="ul card">
+                <li class="bar">
+                    <span class="bar-item button white xlarge right" id="deleteButton">×</span>
+                    <img src="img/barn-avatar.png" class="bar-item circle hide-small" style="width:85px">
+                    <div class="bar-item">
+                        <span class="large">La Pinky</span><br>
+                        <span>barn@mail.com</span>
+                    </div>
+                </li>
 
-    <li class="bar">
-      <span class="bar-item button white xlarge right" id="deleteButton">×</span>
-      <!-- FIXME remover los estilos inline -->
-      <img src="img/male-avatar.png" class="bar-item circle hide-small" style="width:85px">
-      <div class="bar-item">
-        <span class="large">Male placeholder</span><br>
-        <span>male@mail.com</span>
-      </div>
-    </li>
+                <li class="bar">
+                    <span class="bar-item button white xlarge right" id="deleteButton">×</span>
+                    <img src="img/einstein-avatar.png" class="bar-item circle hide-small" style="width:85px">
+                    <div class="bar-item">
+                        <span class="large">AEinstein</span><br>
+                        <span>albert@physics.com</span>
+                    </div>
+                </li>
 
-    <li class="bar">
-      <span class="bar-item button white xlarge right" id="deleteButton">×</span>
-      <img src="img/feame-avatar.png" class="bar-item circle hide-small" style="width:85px">
-      <div class="bar-item">
-        <span class="large">Female placeholder</span><br>
-        <span>female@mail.com</span>
-      </div>
-    </li>
+                <li class="bar">
+                    <span class="bar-item button white xlarge right" id="deleteButton">×</span>
+                    <img src="img/heart-avatar.png" class="bar-item circle hide-small" style="width:85px">
+                    <div class="bar-item">
+                        <span class="large">Lili</span><br>
+                        <span>lili@physics.com</span>
+                    </div>
+                </li>
 
-    <li class="bar">
-      <span class="bar-item button white xlarge right" id="deleteButton">×</span>
-      <img src="img/barn-avatar.png" class="bar-item circle hide-small" style="width:85px">
-      <div class="bar-item">
-        <span class="large">La Pinky</span><br>
-        <span>barn@mail.com</span>
-      </div>
-    </li>
+            </ul>
 
-    <li class="bar">
-      <span class="bar-item button white xlarge right" id="deleteButton">×</span>
-      <img src="img/einstein-avatar.png" class="bar-item circle hide-small" style="width:85px">
-      <div class="bar-item">
-        <span class="large">AEinstein</span><br>
-        <span>albert@physics.com</span>
-      </div>
-    </li>
+            <h2><br>Frienship Request</h2><br>
+            <ul class="ul card">
 
-    <li class="bar">
-      <span class="bar-item button white xlarge right" id="deleteButton">×</span>
-      <img src="img/heart-avatar.png" class="bar-item circle hide-small" style="width:85px">
-      <div class="bar-item">
-        <span class="large">Lili</span><br>
-        <span>lili@physics.com</span>
-      </div>
-    </li>
+                <li class="bar">
+                    <span class="bar-item button white xlarge right" id="addButton">+</span>
+                    <img src="img/male-avatar.png" class="bar-item circle hide-small" style="width:85px">
+                    <div class="bar-item">
+                        <span class="large">Male placeholder</span><br>
+                        <span>male@mail.com</span>
+                    </div>
+                </li>
 
-  </ul>
+                <li class="bar">
+                    <span class="bar-item button white xlarge right" id="addButton">+</span>
+                    <img src="img/feame-avatar.png" class="bar-item circle hide-small" style="width:85px">
+                    <div class="bar-item">
+                        <span class="large">Female placeholder</span><br>
+                        <span>female@mail.com</span>
+                    </div>
+                </li>
 
-    <h2><br>Frienship Request</h2><br>
-    <ul class="ul card">
+                <li class="bar">
+                    <span class="bar-item button white xlarge right" id="addButton">+</span>
+                    <img src="img/barn-avatar.png" class="bar-item circle hide-small" style="width:85px">
+                    <div class="bar-item">
+                        <span class="large">La Pinky</span><br>
+                        <span>barn@mail.com</span>
+                    </div>
+                </li>
 
-    <li class="bar">
-      <span class="bar-item button white xlarge right" id="addButton">+</span>
-      <img src="img/male-avatar.png" class="bar-item circle hide-small" style="width:85px">
-      <div class="bar-item">
-        <span class="large">Male placeholder</span><br>
-        <span>male@mail.com</span>
-      </div>
-    </li>
+                <li class="bar">
+                    <span class="bar-item button white xlarge right" id="addButton">+</span>
+                    <img src="img/einstein-avatar.png" class="bar-item circle hide-small" style="width:85px">
+                    <div class="bar-item">
+                        <span class="large">AEinstein</span><br>
+                        <span>albert@physics.com</span>
+                    </div>
+                </li>
 
-    <li class="bar">
-      <span class="bar-item button white xlarge right" id="addButton">+</span>
-      <img src="img/feame-avatar.png" class="bar-item circle hide-small" style="width:85px">
-      <div class="bar-item">
-        <span class="large">Female placeholder</span><br>
-        <span>female@mail.com</span>
-      </div>
-    </li>
+                <li class="bar">
+                    <span class="bar-item button white xlarge right" id="addButton">+</span>
+                    <img src="img/heart-avatar.png" class="bar-item circle hide-small" style="width:85px">
+                    <div class="bar-item">
+                        <span class="large">Lili</span><br>
+                        <span>lili@physics.com</span>
+                    </div>
+                </li>
 
-    <li class="bar">
-      <span class="bar-item button white xlarge right" id="addButton">+</span>
-      <img src="img/barn-avatar.png" class="bar-item circle hide-small" style="width:85px">
-      <div class="bar-item">
-        <span class="large">La Pinky</span><br>
-        <span>barn@mail.com</span>
-      </div>
-    </li>
+            </ul>
 
-    <li class="bar">
-      <span class="bar-item button white xlarge right" id="addButton">+</span>
-      <img src="img/einstein-avatar.png" class="bar-item circle hide-small" style="width:85px">
-      <div class="bar-item">
-        <span class="large">AEinstein</span><br>
-        <span>albert@physics.com</span>
-      </div>
-    </li>
+        </div>
 
-    <li class="bar">
-      <span class="bar-item button white xlarge right" id="addButton">+</span>
-      <img src="img/heart-avatar.png" class="bar-item circle hide-small" style="width:85px">
-      <div class="bar-item">
-        <span class="large">Lili</span><br>
-        <span>lili@physics.com</span>
-      </div>
-    </li>
-
-  </ul>
-
-</div>
-
-
-<a href="#" class="float" id = "closeButton"></a>
-<div id="modal-wrapper" class="modal">
-  <form class="modal-content animate">
-    <div class="imgcontainer">
-      <span id = "addButton" class="close" title="Close PopUp">&times;</span>
-      <img src="img/friend.png" alt="Avatar" class="avatar">
-      <h1 style="text-align:center">Add Friend</h1>
-    </div>
-    <div class="container">
-      <input type="text" placeholder="Enter Mail">
-      <button type="submit">Send friendship request</button>
-    </div>
-  </form>
-</div>
-    <script type="text/javascript" src="script/script.js"></script>
-</body>
+        <a href="#" class="float" id = "closeButton"></a>
+        <div id="modal-wrapper" class="modal">
+            <form class="modal-content animate">
+                <div class="imgcontainer">
+                    <span id = "addButton" class="close" title="Close PopUp">&times;</span>
+                    <img src="img/friend.png" alt="Avatar" class="avatar">
+                    <h1 style="text-align:center">Add Friend</h1>
+                </div>
+                <div class="container">
+                    <input type="text" placeholder="Enter Mail">
+                    <button type="submit">Send friendship request</button>
+                </div>
+            </form>
+        </div>
+        <script type="text/javascript" src="script/script.js"></script>
+        <script src="script/js.js"></script>
+    </body>
 </html>
