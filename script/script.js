@@ -31,3 +31,16 @@ function checkCookie() {
         }
     }
 }
+
+function postRequest(url, data, header) {
+    return fetch(url, {
+        credentials: 'same-origin',
+        method: 'POST',
+        body: JSON.stringify(data),
+        headers: header,
+    })
+        .then(response => console.log(response))
+        .catch(function(err) {
+        console.log(err);
+    });
+}

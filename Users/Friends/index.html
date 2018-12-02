@@ -2,7 +2,7 @@
 <html>
     <head>
         <title>Friends</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="styles/styles.css">
         <link rel="stylesheet" href="styles/normalize.css"> 
     </head>
@@ -12,120 +12,19 @@
         </header> 
 
         <div class="search-bar">
-            <input type="search" class="search" placeholder="Search..." />
+            <input type="search" class="search" id="textSearch" placeholder="Search..." />
+            <button class="go" id="buttonFind">Find</button>
             <div class="dropdown">
-                <input class="dropbtn" type="image" src="img/filtro.png" onclick="myFunction()">
+                <input class="dropbtn" type="image" src="img/filtro.png" id="input">
                 <div id="myDropdown" class="dropdown-content">
-                    <a href="#">My Friends</a>
-                    <a href="#">Request</a>
-                    <a href="#">My Request</a>
+                    <a href="#" id="friends">Friends</a>
+                    <a href="#" id="request">Request</a>
                 </div>
             </div>
         </div>
-        <div class="container">
+        <div class="container" id="container">
             <h2><br>My Friends</h2><br>
-
-            <ul class="ul card">
-
-                <li class="bar">
-                    <span class="bar-item button white xlarge right" id="deleteButton">×</span>
-                    <img src="img/male-avatar.png" class="bar-item circle hide-small" style="width:85px">
-                    <div class="bar-item">
-                        <span class="large">Male placeholder</span><br>
-                        <span>male@mail.com</span>
-                    </div>
-                </li>
-
-                <li class="bar">
-                    <span class="bar-item button white xlarge right" id="deleteButton">×</span>
-                    <img src="img/feame-avatar.png" class="bar-item circle hide-small" style="width:85px">
-                    <div class="bar-item">
-                        <span class="large">Female placeholder</span><br>
-                        <span>female@mail.com</span>
-                    </div>
-                </li>
-
-                <li class="bar">
-                    <span class="bar-item button white xlarge right" id="deleteButton">×</span>
-                    <img src="img/barn-avatar.png" class="bar-item circle hide-small" style="width:85px">
-                    <div class="bar-item">
-                        <span class="large">La Pinky</span><br>
-                        <span>barn@mail.com</span>
-                    </div>
-                </li>
-
-                <li class="bar">
-                    <span class="bar-item button white xlarge right" id="deleteButton">×</span>
-                    <img src="img/einstein-avatar.png" class="bar-item circle hide-small" style="width:85px">
-                    <div class="bar-item">
-                        <span class="large">AEinstein</span><br>
-                        <span>albert@physics.com</span>
-                    </div>
-                </li>
-
-                <li class="bar">
-                    <span class="bar-item button white xlarge right" id="deleteButton">×</span>
-                    <img src="img/heart-avatar.png" class="bar-item circle hide-small" style="width:85px">
-                    <div class="bar-item">
-                        <span class="large">Lili</span><br>
-                        <span>lili@physics.com</span>
-                    </div>
-                </li>
-
-            </ul>
-
-            <h2><br>Frienship Request</h2><br>
-            <ul class="ul card">
-
-                <li class="bar">
-                    <span class="bar-item button white xlarge right" id="addButton">+</span>
-                    <img src="img/male-avatar.png" class="bar-item circle hide-small" style="width:85px">
-                    <div class="bar-item">
-                        <span class="large">Male placeholder</span><br>
-                        <span>male@mail.com</span>
-                    </div>
-                </li>
-
-                <li class="bar">
-                    <span class="bar-item button white xlarge right" id="addButton">+</span>
-                    <img src="img/feame-avatar.png" class="bar-item circle hide-small" style="width:85px">
-                    <div class="bar-item">
-                        <span class="large">Female placeholder</span><br>
-                        <span>female@mail.com</span>
-                    </div>
-                </li>
-
-                <li class="bar">
-                    <span class="bar-item button white xlarge right" id="addButton">+</span>
-                    <img src="img/barn-avatar.png" class="bar-item circle hide-small" style="width:85px">
-                    <div class="bar-item">
-                        <span class="large">La Pinky</span><br>
-                        <span>barn@mail.com</span>
-                    </div>
-                </li>
-
-                <li class="bar">
-                    <span class="bar-item button white xlarge right" id="addButton">+</span>
-                    <img src="img/einstein-avatar.png" class="bar-item circle hide-small" style="width:85px">
-                    <div class="bar-item">
-                        <span class="large">AEinstein</span><br>
-                        <span>albert@physics.com</span>
-                    </div>
-                </li>
-
-                <li class="bar">
-                    <span class="bar-item button white xlarge right" id="addButton">+</span>
-                    <img src="img/heart-avatar.png" class="bar-item circle hide-small" style="width:85px">
-                    <div class="bar-item">
-                        <span class="large">Lili</span><br>
-                        <span>lili@physics.com</span>
-                    </div>
-                </li>
-
-            </ul>
-
         </div>
-
 
         <a href="#" class="float" id = "closeButton"></a>
         <div id="modal-wrapper" class="modal">
@@ -141,6 +40,7 @@
                 </div>
             </form>
         </div>
+        <script type="text/javascript" src="../../script/script.js"></script>
         <script type="text/javascript" src="script/script.js"></script>
         <script src="script/js.js"></script>   
     </body>
