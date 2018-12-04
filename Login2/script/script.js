@@ -40,17 +40,10 @@ function checkCookie() {
 botonDos.addEventListener('click', function () {
     var email = document.getElementById('mail').value;
     var pass = document.getElementById('password').value;
-    var regex = /^[-\w.%+]{1,64}@(?:[A-Z0-9-]{1,63}\.){1,125}[A-Z]{2,63}$/i;
+    postRequest('http://localhost:3000/login', {mail: email, password: pass})
+        .then(data => setCookie('session', data.token, 168))
+        .catch(error => console.error(error))
 
-    if(email == "" || pass === "") {
-      createAlert('There´s some empty data! Make sure to fill in all the text fields ', 'warning', 6000);
-    } else if (!regex.test(email)){
-        createAlert('Invalid mail! Please insert a correct mail account', 'warning', 6000);
-    } else {
-      postRequest('http://localhost:3000/login', {mail: email, password: pass})
-      .then(data => setCookie('session', data.token, 168))
-      .catch(error => console.error(error))
-    }
 })
 
 function postRequest(url, data) {

@@ -1,11 +1,24 @@
-const botonDos = document.getElementById('botonPost');
+var button = document.getElementById('button');
+
+button.addEventListener('click', function () {
+    var name2 = document.getElementById('name').value;
+    var mail2 = document.getElementById('mail').value;
+    var username2 = document.getElementById('username').value;
+    var password2 = document.getElementById('password').value;
+    var secondPassword2 = document.getElementById('second-password').value;
+    var alternativeMail2 = document.getElementById('alternative-mail').value;
+    
+    postRequest('http://localhost:3000/users', {name: name2, mail: mail2, username: username2, password: password2, second_mail: alternativeMail2})
+        .then(data => setCookie('session', data.token, 168)) // Result from the `response.json()` call
+        .catch(error => alert('Check your data, stupid!'))
+
+});
 
 function setCookie(cookieName, cookieValue, cookieExdays) {
     var d = new Date();
     d.setTime(d.getTime() + (cookieExdays*24*60*60*1000));
     var expires = "expires="+ d.toUTCString();
     document.cookie = cookieName + "=" + cookieValue + ";" + expires + ";path=/";
-    location.href="../Users/Main-Page/userPage.html";
 }
 
 function getCookie(cookieName) {
@@ -36,24 +49,18 @@ function checkCookie() {
 }
 
 
-/*Fetch para requests con metodo post*/
+/*Fetch para requests con metodo post
 botonDos.addEventListener('click', function () {
     var email = document.getElementById('mail').value;
     var pass = document.getElementById('password').value;
-    var regex = /^[-\w.%+]{1,64}@(?:[A-Z0-9-]{1,63}\.){1,125}[A-Z]{2,63}$/i;
+    postRequest('http://localhost:3000/login', {mail: email, password: pass})
+        .then(data => setCookie('session', data.token, 168)) // Result from the `response.json()` call
+        .catch(error => console.error(error))
 
-    if(email == "" || pass === "") {
-      createAlert('There´s some empty data! Make sure to fill in all the text fields ', 'warning', 6000);
-    } else if (!regex.test(email)){
-        createAlert('Invalid mail! Please insert a correct mail account', 'warning', 6000);
-    } else {
-      postRequest('http://localhost:3000/login', {mail: email, password: pass})
-      .then(data => setCookie('session', data.token, 168))
-      .catch(error => console.error(error))
-    }
-})
+}) */
 
 function postRequest(url, data) {
+    console.log(data);
     return fetch(url, {
         credentials: 'same-origin', // 'include', default: 'omit'
         method: 'POST', // 'GET', 'PUT', 'DELETE', etc.
