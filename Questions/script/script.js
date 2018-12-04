@@ -10,7 +10,7 @@ header.append("Authorization", "Bearer " + cookie);
 
 
 window.addEventListener('load', function() {
-    fetch('http://localhost:3000/users/token/id', {
+    fetch('https://spinandanswer.herokuapp.com/users/token/id', {
         method: 'get',
         headers: header,
     }).then(async function(respuesta) {

@@ -23,7 +23,7 @@ var fourthGrid = document.getElementById('Four');
 fisrtGrid.addEventListener('click', function () {
     var answer = document.getElementById("1").textContent;
     createAlert('Correct Answer', 'success', 2000); 
-    postRequest('http://localhost:3000/game/' + gameId, {gameId: gameId, questionId: actualQuestion, answer: answer});
+    postRequest('http://localhost:3000https://spinandanswer.herokuapp.com/game/' + gameId, {gameId: gameId, questionId: actualQuestion, answer: answer});
     getTurn();
     getQuestions();
 })
@@ -31,7 +31,7 @@ fisrtGrid.addEventListener('click', function () {
 secondGrid.addEventListener('click', function () {
     var answer = document.getElementById("2").textContent;
     createAlert('Wrong Answer', 'danger', 2000); 
-    postRequest('http://localhost:3000/game/' + gameId, {gameId: gameId, questionId: actualQuestion, answer: answer});
+    postRequest('https://spinandanswer.herokuapp.com/game/' + gameId, {gameId: gameId, questionId: actualQuestion, answer: answer});
     getTurn();
     getQuestions();
 })
@@ -39,7 +39,7 @@ secondGrid.addEventListener('click', function () {
 thirdGrid.addEventListener('click', function () {
     var answer = document.getElementById("3").textContent;
     createAlert('Wrong Answer', 'danger', 2000); 
-    postRequest('http://localhost:3000/game/' + gameId, {gameId: gameId, questionId: actualQuestion, answer: answer});
+    postRequest('https://spinandanswer.herokuapp.com/game/' + gameId, {gameId: gameId, questionId: actualQuestion, answer: answer});
     getTurn();
     getQuestions(); 
 })
@@ -47,13 +47,13 @@ thirdGrid.addEventListener('click', function () {
 fourthGrid.addEventListener('click', function () {
     var answer = document.getElementById("4").textContent;
     createAlert('Wrong Answer', 'danger', 2000); 
-    postRequest('http://localhost:3000/game/' + gameId, {gameId: gameId, questionId: actualQuestion, answer: answer});
+    postRequest('https://spinandanswer.herokuapp.com/game/' + gameId, {gameId: gameId, questionId: actualQuestion, answer: answer});
     getTurn();
     getQuestions(); 
 })
 
 function getQuestions() {
-    fetch('http://localhost:3000/game/play/' + gameId,{
+    fetch('https://spinandanswer.herokuapp.com/game/play/' + gameId,{
         method: 'GET',
         headers: header,
     }).then(async function(respuesta){
@@ -85,7 +85,7 @@ function getRealTurn(theTurn){
 }
 
 function getTurn() {
-    fetch('http://localhost:3000/game/results/' + gameId,{
+    fetch('https://spinandanswer.herokuapp.com/game/results/' + gameId,{
         method: 'GET',
         headers: header,
     }).then(async function(respuesta){

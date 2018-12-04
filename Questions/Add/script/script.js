@@ -13,12 +13,12 @@ button.addEventListener('click', function () {
     var wrongThree = document.getElementById('wrongThree').value;
     var category = document.getElementById('category').selectedIndex + 1;
 
-    fetch('http://localhost:3000/users/token/id', {
+    fetch('https://spinandanswer.herokuapp.com/users/token/id', {
         method: 'get',
         headers: header,
     }).then(async function(respuesta) {
         var userid = await respuesta.json();
-        postRequest('http://localhost:3000/questions/', {
+        postRequest('https://spinandanswer.herokuapp.com/questions/', {
             "category": category,
             "question": question,
             "correct_answer": answer,

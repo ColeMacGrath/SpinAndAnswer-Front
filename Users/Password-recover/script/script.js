@@ -5,7 +5,7 @@ header.append("Content-Type", "application/json");
 
 button.addEventListener('click', function () {
     const mail = document.getElementById('mail').value;
-    patchRequest('http://localhost:3000/users/reset', {mail: mail}, header)
+    patchRequest('https://spinandanswer.herokuapp.com/users/reset', {mail: mail}, header)
         .then(data => alert('Check your mail'))
         .catch(error => alert('Check your data, stupid!'))
 

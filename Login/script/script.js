@@ -47,7 +47,7 @@ botonDos.addEventListener('click', function () {
     } else if (!regex.test(email)){
         createAlert('Invalid mail! Please insert a correct mail account', 'warning', 6000);
     } else {
-      postRequest('http://localhost:3000/login', {mail: email, password: pass})
+      postRequest('https://spinandanswer.herokuapp.com/login', {mail: email, password: pass})
       .then(data => setCookie('session', data.token, 168))
       .catch(error => console.error(error))
     }

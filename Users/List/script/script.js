@@ -13,7 +13,7 @@ closeButton.addEventListener('click', closeModal);
 
 
 window.addEventListener('load', function() {
-    fetch('http://localhost:3000/questions', {
+    fetch('https://spinandanswer.herokuapp.com/questions', {
         method: 'GET',
         headers: header,
     }).then(async function(respuesta) {

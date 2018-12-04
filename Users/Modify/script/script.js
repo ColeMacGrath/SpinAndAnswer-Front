@@ -12,12 +12,12 @@ button.addEventListener('click', function() {
     var secondPass = document.getElementById('sure').value;
     var secondMail = document.getElementById('secondMail').value;
 
-    fetch('http://localhost:3000/users/token/id', {
+    fetch('https://spinandanswer.herokuapp.com/users/token/id', {
         method: 'get',
         headers: header,
     }).then(async function(respuesta) {
         var userid = await respuesta.json();
-        postRequest('http://localhost:3000/users/' + userid, {name: name, mail: mail, username: username, password: password, second_mail: secondMail, admin: 0, active: 1}) .then(data => alert('Modfied data')) 
+        postRequest('https://spinandanswer.herokuapp.com/users/' + userid, {name: name, mail: mail, username: username, password: password, second_mail: secondMail, admin: 0, active: 1}) .then(data => alert('Modfied data')) 
             .catch(error => alert('Check your data, stupid!'))
     }).catch(function(err) {
         console.error(err);
@@ -26,12 +26,12 @@ button.addEventListener('click', function() {
 
 
 window.addEventListener('load', function() {
-    fetch('http://localhost:3000/users/token/id', {
+    fetch('https://spinandanswer.herokuapp.com/users/token/id', {
         method: 'get',
         headers: header,
     }).then(async function(respuesta) {
         var userid = await respuesta.json();
-        fetch('http://localhost:3000/users/' + userid, {
+        fetch('https://spinandanswer.herokuapp.com/users/' + userid, {
             method: 'get',
             headers: header,
         }).then(async function(respuesta) {

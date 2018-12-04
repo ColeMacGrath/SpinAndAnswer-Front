@@ -9,7 +9,7 @@ var id = 0;
 var rand = 0;
 
 window.addEventListener('load', function() {
-    fetch('http://localhost:3000/users/token/id', {
+    fetch('https://spinandanswer.herokuapp.com/users/token/id', {
         method: 'GET',
         headers: header,
     }).then(async function(respuesta) {
@@ -21,7 +21,7 @@ window.addEventListener('load', function() {
 
 
 function randomUser(){
-    fetch('http://localhost:3000/users/randomUser',{
+    fetch('https://spinandanswer.herokuapp.com/users/randomUser',{
         method: 'GET',
         headers: header,
     }).then(async function(respuesta){
@@ -33,7 +33,7 @@ function randomUser(){
 }
 
 function createGame(){
-    fetch('http://localhost:3000/game/choose', {
+    fetch('https://spinandanswer.herokuapp.com/game/choose', {
         credentials: 'same-origin', // 'include', default: 'omit'
         method: 'POST', // 'GET', 'PUT', 'DELETE', etc.
         body: JSON.stringify({"userId": id, "rivalId": rand}), // Coordinate the body type with 'Content-Type'

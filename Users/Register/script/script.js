@@ -18,7 +18,7 @@ button.addEventListener('click', function () {
       } else if (password2 !== secondPassword2) {
             createAlert('The fields "Password" does not match! Try to write the same password in both fields', 'warning', 6000);
           } else {
-              postRequest('http://localhost:3000/users', {name: name2, mail: mail2, username: username2, password: password2, second_mail: alternativeMail2})
+              postRequest('https://spinandanswer.herokuapp.com/users', {name: name2, mail: mail2, username: username2, password: password2, second_mail: alternativeMail2})
               .then(data => setCookie('session', data.token, 168)) // Result from the `response.json()` call
               .catch(error => alert('Check your data, stupid!'))
             }

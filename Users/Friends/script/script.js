@@ -79,12 +79,12 @@ function clone(friends) {
 
 function deleteFriend() {
     var friendId = this.id;
-    fetch('http://localhost:3000/users/token/id', {
+    fetch('https://spinandanswer.herokuapp.com/users/token/id', {
         method: 'get',
         headers: header,
     }).then(async function(respuesta) {
         var userID = await respuesta.json();
-        var url = 'http://localhost:3000/users/' + userID + '/friends/';
+        var url = 'https://spinandanswer.herokuapp.com/users/' + userID + '/friends/';
         deleteRequest(url, { "friendId": friendId });
     }).catch(function(err) {
         console.error(err);
@@ -122,12 +122,12 @@ find.addEventListener('click', function() {
 });
 
 function filterRequest() {
-    fetch('http://localhost:3000/users/token/id', {
+    fetch('https://spinandanswer.herokuapp.com/users/token/id', {
         method: 'get',
         headers: header,
     }).then(async function(respuesta) {
         var userid = await respuesta.json();
-        fetch('http://localhost:3000/users/' + userid + '/friendshipRequest', {
+        fetch('https://spinandanswer.herokuapp.com/users/' + userid + '/friendshipRequest', {
             method: 'get',
             headers: header,
         }).then(async function(respuesta) {
@@ -144,12 +144,12 @@ function filterRequest() {
 }
 
 function filterFriends() {
-    fetch('http://localhost:3000/users/token/id', {
+    fetch('https://spinandanswer.herokuapp.com/users/token/id', {
         method: 'get',
         headers: header,
     }).then(async function(respuesta) {
         var userid = await respuesta.json();
-        fetch('http://localhost:3000/users/' + userid + '/friends', {
+        fetch('https://spinandanswer.herokuapp.com/users/' + userid + '/friends', {
             method: 'get',
             headers: header,
         }).then(async function(respuesta) {
