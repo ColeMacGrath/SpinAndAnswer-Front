@@ -7,13 +7,15 @@ var cookie = getCookie('session');
 var header = new Headers();
 header.append("Content-Type", "application/json");
 header.append("Authorization", "Bearer " + cookie);
-var userId = getUserIdByToken();
-console.log('Token: ' + cookie)
 
 
 window.addEventListener('load', function() {
-    
-    fetch('http://localhost:3000/users/' + userId, {
+    fetch('https://spinandanswer.herokuapp.com/users/token/id', {
+        method: 'get',
+        headers: header,
+    }).then(async function(respuesta) {
+        var userid = await respuesta.json();
+        fetch('https://spinandanswer.herokuapp.com/users/' + userid, {
         method: 'get',
         headers: header,
     }).then(async function(respuesta) {
@@ -25,18 +27,7 @@ window.addEventListener('load', function() {
     }).catch(function(err) {
         console.error(err);
     });
-});
-
-function getUserIdByToken() {
-    var id = -1;
-    fetch('http://localhost:3000/users/getIdByToken', {
-        method: 'get',
-        headers: header,
-    }).then(async function(respuesta) {
-        var userid = await respuesta.json();
-        id = userId[0].user_id;
     }).catch(function(err) {
         console.error(err);
     });
-    return id;
-}
+});

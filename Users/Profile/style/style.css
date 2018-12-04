@@ -69,7 +69,12 @@ ul{
 
 .icon-add {
   font-size: 300%;
-  color: darkcyan;
+  color: ghostwhite;
+}
+
+.icon-pen {
+  font-size: 300%;
+  color: black;
 }
 
 header{

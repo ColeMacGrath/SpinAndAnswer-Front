@@ -9,6 +9,7 @@
         <link href="css/font-awesome.min.css" rel="stylesheet" type="text/css">
         <link href="css/normalize.css" rel="stylesheet" type="text/css">
         <link href="css/styles.css" rel="stylesheet" type="text/css">
+        <link rel="stylesheet" href="../../alerts/css/alert.css">
     </head>
     <body>
         <header>
@@ -17,46 +18,50 @@
         </header>
 
         <div class="question">
-            <h3> Question 4 of 10 </h3>
-            <p>The % operator refers to: </p>
-            <h2 class="number">00:14</h2>
+            <h3 id="questionNumber"> </h3>
+            <p id="question"></p>
+            <h2 class="number" id="time"></h2>
         </div>
 
         <div class="section">
             <ul class="grid">
-                <li>
+                <li id="One">
                     <div class="box img-1">
                         <a href="#">
                             <div class="info">
-                                <p>The remainder of a division of two values</p>
+                                <p id="1">The remainder of a division of two values</p>
                             </div></a>
                     </div>
                 </li>
-                <li>
+                <li id="Two">
                     <div class="box img-2">
                         <a href="#">
                             <div class="info">
-                                <p>The result of a division</p>
+                                <p id="2">The result of a division</p>
                             </div></a>
                     </div>
                 </li>
-                <li>
+                <li id="Three">
                     <div class="box img-3">
                         <a href="#">
                             <div class="info">
-                                <p>The comparison of two values</p>
+                                <p id="3">The comparison of two values</p>
                             </div></a>
                     </div>
                 </li>
-                <li>
+                <li id="Four">
                     <div class="box img-4">
                         <a href="#">
                             <div class="info">
-                                <p>The percentage of equality of two values </p>
+                                <p id="4">The percentage of equality of two values </p>
                             </div></a>
                     </div>
                 </li>
             </ul>
+            <div id="alert-container"><div id="alert-wrapper"></div></div>
         </div>
+        <script type="text/javascript" src="../../alerts/js/alert.js"></script>
+        <script type="text/javascript" src="../../script/script.js"></script>
+        <script type="text/javascript" src="script/script.js"></script>
     </body>
 </html>

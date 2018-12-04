@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="styles/styles.css">
         <link rel="stylesheet" href="styles/normalize.css">
         <title>All Questions</title>
@@ -11,114 +11,17 @@
             <a class="back" href="../../Main-Page/index.html">Home</a>
         </header>
         <div class="search-bar">
-            <input type="search" class="search" placeholder="Search..." />
-            <button class="go"></button>
+            <input type="search" id="textSearch" class="search" placeholder="Search..." />
+            <button class="go" id="buttonFind">Find</button>
         </div>
-        <div class="container">
-            <h2><br>Approved Questions</h2><br>
-
-            <ul class="ul card">
-
-                <li class="bar">
-                    <span class="bar-item button white xlarge right" id="deleteButton">×</span>
-                    <img src="img/database.png" class="bar-item circle hide-small" style="width:85px">
-                    <div class="bar-item">
-                        <span class="large">What does SQL means?</span><br>
-                        <span>Databases</span>
-                    </div>
-                </li>
-
-                <li class="bar">
-                    <span class="bar-item button white xlarge right" id="deleteButton">×</span>
-                    <img src="img/database.png" class="bar-item circle hide-small" style="width:85px">
-                    <div class="bar-item">
-                        <span class="large">Which SQL statement is used to update data in a database?</span><br>
-                        <span>Databases</span>
-                    </div>
-                </li>
-
-                <li class="bar">
-                    <span class="bar-item button white xlarge right" id="deleteButton">×</span>
-                    <img src="img/mobile.png" class="bar-item circle hide-small" style="width:85px">
-                    <div class="bar-item">
-                        <span class="large">What is the significance of “?” in Swift?</span><br>
-                        <span>Mobile Development</span>
-                    </div>
-                </li>
-
-                <li class="bar">
-                    <span class="bar-item button white xlarge right" id="deleteButton">×</span>
-                    <img src="img/linux.png" class="bar-item circle hide-small" style="width:85px">
-                    <div class="bar-item">
-                        <span class="large">Command to remove file on linux"</span><br>
-                        <span>Linux</span>
-                    </div>
-                </li>
-
-                <li class="bar">
-                    <span class="bar-item button white xlarge right" id="deleteButton">×</span>
-                    <img src="img/networking.png" class="bar-item circle hide-small" style="width:85px">
-                    <div class="bar-item">
-                        <span class="large">Last OSI layer</span><br>
-                        <span>Networking</span>
-                    </div>
-                </li>
-
-            </ul>
-
-            <h2><br>Approved Questions</h2><br>
-
-            <ul class="ul card">
-
-                <li class="bar">
-                    <span class="bar-item button white xlarge right" id="addButton">+</span>
-                    <img src="img/software.png" class="bar-item circle hide-small" style="width:85px">
-                    <div class="bar-item">
-                        <span class="large">Wich is a testing method?</span><br>
-                        <span>Software Engineering</span>
-                    </div>
-                </li>
-
-                <li class="bar">
-                    <span class="bar-item button white xlarge right" id="addButton">+</span>
-                    <img src="img/networking.png" class="bar-item circle hide-small" style="width:85px">
-                    <div class="bar-item">
-                        <span class="large">What does DHCP means</span><br>
-                        <span>Networking</span>
-                    </div>
-                </li>
-
-                <li class="bar">
-                    <span class="bar-item button white xlarge right" id="addButton">+</span>
-                    <img src="img/mobile.png" class="bar-item circle hide-small" style="width:85px">
-                    <div class="bar-item">
-                        <span class="large">What are the types of constructors in Kotlin?</span><br>
-                        <span>Mobile Development</span>
-                    </div>
-                </li>
-
-                <li class="bar">
-                    <span class="bar-item button white xlarge right" id="addButton">+</span>
-                    <img src="img/programming.png" class="bar-item circle hide-small" style="width:85px">
-                    <div class="bar-item">
-                        <span class="large">What is the correct syntax for referring to an external script called "xxx.js"?</span><br>
-                        <span>Javascript</span>
-                    </div>
-                </li>
-
-                <li class="bar">
-                    <span class="bar-item button white xlarge right" id="addButton">+</span>
-                    <img src="img/database.png" class="bar-item circle hide-small" style="width:85px">
-                    <div class="bar-item">
-                        <span class="large">Which SQL statement is used to extract data from a database?</span><br>
-                        <span>Databases</span>
-                    </div>
-                </li>
-
-            </ul>
-
-        </div> 
-        <a href="#" class="float" id = "closeButton"></a>
+        <h2>Approved Questions</h2><br>
+        <div class="container" id="container">
+        </div>
+        <h2><br>Unapproved Questions</h2><br>
+        <div class="container" id="containertwo">
+        </div>
+        <a href="../../Questions/Add/index.html" class="float" id ="closeButton"></a>
+        <script type="text/javascript" src="../../script/script.js"></script>
         <script type="text/javascript" src="script/script.js"></script>
     </body>
 </html>

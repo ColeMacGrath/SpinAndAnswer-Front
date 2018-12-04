@@ -18,24 +18,26 @@
                 <article class="wallpaper">
                     <br><h3>Modify</h3>
                     <form class="" action="index.html" method="post">
-                        <span class="icon-question"></span><input class="inp" type="text" name="user" value="Who designed C++ languaje?"><br>
-                        <span class="icon-checkmark"></span><input class="inp" type="mail" name="pass" value="Bjarne Stroustrup"><br>
-                        <span class="icon-cross"></span><input class="inp" type="text" name="user" value="Dennis Ritchie"> <br>
-                        <span class="icon-cross"></span><input class="inp" type="text" name="gbhnj" value="Bill Gates" ><br>
-                        <span class="icon-cross"></span><input class="inp" type="text" name="pass" value="Linus Torvals">
-                        <span class="icon-price-tags"></span><select class="inp">
-                        <option value="volvo">Programming</option>
-                        <option value="saab">Linux</option>
-                        <option value="opel">Networking</option>
-                        <option value="audi">Databases</option>
-                        <option value="opel">Mobile development </option>
-                        <option value="audi">Software Engeniering</option>
+                        <span class="icon-question"></span><input id="question" class="inp" type="text" name="user" value=""><br>
+                        <span class="icon-checkmark"></span><input id="correct" class="inp" type="mail" name="pass" value=""><br>
+                        <span class="icon-cross"></span><input id="wrongOne" class="inp" type="text" name="user" value=""> <br>
+                        <span class="icon-cross"></span><input id="wrongTwo" class="inp" type="text" name="gbhnj" value="" ><br>
+                        <span class="icon-cross"></span><input id="wrongThree" class="inp" type="text" name="pass" value="">
+                        <span class="icon-price-tags"></span><select id="category" class="inp">
+                        <option value="">Databases</option>
+                        <option value="">Programming</option>
+                        <option value="">Mobile Development</option>
+                        <option value="">Software Engineering</option>
+                        <option value="">Linux</option>
+                        <option value="">Networking</option>
                         </select>
-                        <input class="boton" type="submit" name="home" value="Save">
+                        <button id="button" type="button" name="button" class="boton">Save</button>
                     </form>
                 </article>
             </div>
 
         </div>
+        <script type="text/javascript" src="../../script/script.js"></script>
+        <script type="text/javascript" src="script/script.js"></script>
     </body>
 </html>

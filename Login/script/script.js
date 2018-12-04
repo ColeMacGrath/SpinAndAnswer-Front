@@ -5,6 +5,7 @@ function setCookie(cookieName, cookieValue, cookieExdays) {
     d.setTime(d.getTime() + (cookieExdays*24*60*60*1000));
     var expires = "expires="+ d.toUTCString();
     document.cookie = cookieName + "=" + cookieValue + ";" + expires + ";path=/";
+    location.href="../Users/Main-Page/userPage.html";
 }
 
 function getCookie(cookieName) {
@@ -39,10 +40,17 @@ function checkCookie() {
 botonDos.addEventListener('click', function () {
     var email = document.getElementById('mail').value;
     var pass = document.getElementById('password').value;
-    postRequest('http://localhost:3000/login', {mail: email, password: pass})
-        .then(data => setCookie('session', data.token, 168)) // Result from the `response.json()` call
-        .catch(error => console.error(error))
+    var regex = /^[-\w.%+]{1,64}@(?:[A-Z0-9-]{1,63}\.){1,125}[A-Z]{2,63}$/i;
 
+    if(email == "" || pass === "") {
+      createAlert('There´s some empty data! Make sure to fill in all the text fields ', 'warning', 6000);
+    } else if (!regex.test(email)){
+        createAlert('Invalid mail! Please insert a correct mail account', 'warning', 6000);
+    } else {
+      postRequest('https://spinandanswer.herokuapp.com/login', {mail: email, password: pass})
+      .then(data => setCookie('session', data.token, 168))
+      .catch(error => console.error(error))
+    }
 })
 
 function postRequest(url, data) {
