@@ -1,3 +1,9 @@
+*{
+  margin: 0;
+  padding: 0;
+  font-family: Josefin Sans;
+}
+
 body{
   margin: 0;
   padding: 0;
@@ -17,7 +23,6 @@ body{
   margin: auto;
   margin-top: 5%;
   color: white;
-  font-family: 'Century Gothic',sans-serif;
 }
 .box-img{
   border-radius: 50%;
@@ -32,7 +37,7 @@ body{
 }
 .box h5{
   margin-top: 0%;
-  margin-bottom: 3%;
+  margin-bottom: 8%;
   font-size: 20px;
   letter-spacing: 3px;
   font-weight: 100;
@@ -61,20 +66,21 @@ ul{
 .back {
     padding: 1%;
 }
-.mail .icon-gmail {
+.mail .icon-email-mail-streamline {
   font-size: 300%;
-  margin-top: 0;
-  margin-bottom: 0; 
+  margin-top: 20px;
+  margin-bottom: 0;
 }
 
-.icon-add {
+.icon-user-add {
   font-size: 300%;
-  color: ghostwhite;
+  color: darkcyan;
+  margin-right: 30px;
 }
 
-.icon-pen {
+.icon-modify {
   font-size: 300%;
-  color: black;
+  color: darkcyan;
 }
 
 header{

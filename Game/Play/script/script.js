@@ -23,7 +23,7 @@ var fourthGrid = document.getElementById('Four');
 fisrtGrid.addEventListener('click', function () {
     var answer = document.getElementById("1").textContent;
     createAlert('Correct Answer', 'success', 2000); 
-    postRequest('http://localhost:3000https://spinandanswer.herokuapp.com/game/' + gameId, {gameId: gameId, questionId: actualQuestion, answer: answer});
+    postRequest('https://spinandanswer.herokuapp.com/game/' + gameId, {gameId: gameId, questionId: actualQuestion, answer: answer});
     getTurn();
     getQuestions();
 })

@@ -38,15 +38,15 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-.icon-gmail:before {
-  content: "\61";
-}
-.icon-menu:before {
-  content: "\62";
-}
-.icon-circle:before {
-  content: "\63";
+.icon-modify:before {
+  content: "\64";
 }
 .icon-user-add:before {
-  content: "\64";
+  content: "\61";
+}
+.icon-bars:before {
+  content: "\62";
+}
+.icon-email-mail-streamline:before {
+  content: "\63";
 }
