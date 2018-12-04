@@ -12,6 +12,7 @@ var second = document.getElementById("2");
 var thrid = document.getElementById("3");
 var fourth = document.getElementById("4");
 var gameId = getCookie('nadal');
+var gameId = 12;
 var turn = 0;
 var actualQuestion = 0;
 
@@ -85,12 +86,14 @@ function getRealTurn(theTurn){
 }
 
 function getTurn() {
+    console.log('Game ID: ' + gameId);
     fetch('https://spinandanswer.herokuapp.com/game/results/' + gameId,{
         method: 'GET',
         headers: header,
     }).then(async function(respuesta){
         var game = await respuesta.json();
-        var turn = game[0].turn;
+        //var turn = game[0].turn;
+        turn++;
         getRealTurn(turn);
     }).catch(function(err){
         console.error(err);

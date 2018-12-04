@@ -5,8 +5,8 @@ header.append("Authorization", "Bearer " + cookie);
 
 var buttonRandom = document.getElementById("buttonRandom");
 
-var id = 0;
-var rand = 0;
+var id = 1;
+var rand = 2;
 
 window.addEventListener('load', function() {
     fetch('https://spinandanswer.herokuapp.com/users/token/id', {
@@ -34,12 +34,10 @@ function randomUser(){
 
 function createGame(){
     fetch('https://spinandanswer.herokuapp.com/game/choose', {
-        credentials: 'same-origin', // 'include', default: 'omit'
-        method: 'POST', // 'GET', 'PUT', 'DELETE', etc.
-        body: JSON.stringify({"userId": id, "rivalId": rand}), // Coordinate the body type with 'Content-Type'
-        headers: new Headers({
-            'Content-Type': 'application/json'
-        }),
+        credentials: 'same-origin',
+        method: 'POST',
+        body: JSON.stringify({"userId": id, "rivalId": rand}),
+        headers: header,
     })
         .then(async function(response) {
         var game = await response.json();
@@ -54,20 +52,4 @@ function createGame(){
 buttonRandom.addEventListener('click', function() {
     randomUser();
     createGame();
-
-    /* fetch('http://localhost:3000/users/randomUser', {
-        method: 'get',
-        headers: header,
-    }).then(async function(respuesta) {
-        var users = await respuesta.json();
-        rand = Math.floor(Math.random() * users.data.length);
-    }).then(function(respuesta) {
-        fetch('http://localhost:3000/game/choose', {
-            method: 'POST',
-            headers: header,
-            body: JSON.stringify({ "userId": id, "rivalId": rand})
-        })
-    }).catch(function(err) {
-        console.error(err);
-    }); */
 })
