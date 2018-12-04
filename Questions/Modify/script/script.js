@@ -6,7 +6,7 @@ header.append("Authorization", "Bearer " + cookie);
 var button = document.getElementById('button');
 
 window.addEventListener('load', function() {
-  fetch('http://localhost:3000/questions/' + questionId, {
+  fetch('https://spinandanswer.herokuapp.com/questions/' + questionId, {
         method: 'GET',
         headers: header,
     }).then(async function(respuesta) {
@@ -32,7 +32,7 @@ button.addEventListener("click", function() {
   var wrongThree = document.getElementById('wrongThree').value;
   var category = document.getElementById('category').selectedIndex + 1;
 
-  putRequest('http://localhost:3000/questions/' + questionId, {
+  putRequest('https://spinandanswer.herokuapp.com/questions/' + questionId, {
     category: category,
     question: question,
     correct_answer: correct,

@@ -39,7 +39,7 @@ const networking = {
 
 
 window.addEventListener('load', function() {
-    fetch('http://localhost:3000/questions', {
+    fetch('https://spinandanswer.herokuapp.com/questions', {
         method: 'GET',
         headers: header,
     }).then(async function(respuesta) {
@@ -169,7 +169,7 @@ function clone(questions) {
 
 function deleteQuestion() {
     var questionId = this.id;
-    fetch('http://localhost:3000/questions/' + questionId, {
+    fetch('https://spinandanswer.herokuapp.com/questions/' + questionId, {
         method: 'PATCH',
         headers: header,
     }).then(function(respuesta) {

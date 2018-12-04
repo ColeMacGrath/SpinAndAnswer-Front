@@ -15,7 +15,7 @@ window.addEventListener('load', function() {
         headers: header,
     }).then(async function(respuesta) {
         var userid = await respuesta.json();
-        fetch('http://localhost:3000/users/' + userid, {
+        fetch('https://spinandanswer.herokuapp.com/users/' + userid, {
         method: 'get',
         headers: header,
     }).then(async function(respuesta) {
