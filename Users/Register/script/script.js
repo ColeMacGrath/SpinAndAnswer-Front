@@ -62,16 +62,6 @@ function checkCookie() {
 }
 
 
-/*Fetch para requests con metodo post
-botonDos.addEventListener('click', function () {
-    var email = document.getElementById('mail').value;
-    var pass = document.getElementById('password').value;
-    postRequest('https://spinandanswer.herokuapp.com/login', {mail: email, password: pass})
-        .then(data => setCookie('session', data.token, 168)) // Result from the `response.json()` call
-        .catch(error => console.error(error))
-
-}) */
-
 function postRequest(url, data) {
     console.log(data);
     return fetch(url, {
