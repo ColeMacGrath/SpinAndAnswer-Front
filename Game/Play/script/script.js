@@ -12,7 +12,7 @@ var second = document.getElementById("2");
 var thrid = document.getElementById("3");
 var fourth = document.getElementById("4");
 var gameId = getCookie('nadal');
-var turn = 1;
+var turn = 0;
 var actualQuestion = 1;
 
 var fisrtGrid = document.getElementById('One');
@@ -53,7 +53,7 @@ fourthGrid.addEventListener('click', function () {
 })
 
 function getRealTurn(theTurn){
-    //turn = theTurn;
+      turn = theTurn;
 }
 
 function getTurn() {
@@ -63,27 +63,32 @@ function getTurn() {
     }).then(async function(respuesta){
         var game = await respuesta.json();
         turn++;
-        //var newTurn = game[0].turn;
-        //getRealTurn(newTurn);
+        var newTurn = game[0].turn;
+        getRealTurn(newTurn);
     }).catch(function(err){
         console.error(err);
     })
 }
 
 function loadQuestion(questions) {
-    var str = 'Question ' + turn + ' of 10';
-    questionTurn.textContent = str;
-    var questionsToShow = questions;
-    questionTitle.textContent = questionsToShow[turn].question;
-    actualQuestion = questionsToShow[turn].question_id;
+    if (turn < 10) {
+      var str = 'Question ' + turn + ' of 10';
+      questionTurn.textContent = str;
+      var questionsToShow = questions;
+      questionTitle.textContent = questionsToShow[turn].question;
+      actualQuestion = questionsToShow[turn].question_id;
 
-    first.textContent = questionsToShow[turn].correct_answer;
+      first.textContent = questionsToShow[turn].correct_answer;
 
-    second.textContent = questionsToShow[turn ].answer_one;
+      second.textContent = questionsToShow[turn ].answer_one;
 
-    thrid.textContent = questionsToShow[turn].answer_two;
+      thrid.textContent = questionsToShow[turn].answer_two;
 
-    fourth.textContent = questionsToShow[turn].answer_three;
+      fourth.textContent = questionsToShow[turn].answer_three;
+    } else {
+      location.href = '../List/index.html';
+    }
+
 }
 
 function getQuestions() {
