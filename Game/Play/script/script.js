@@ -53,7 +53,7 @@ fourthGrid.addEventListener('click', function () {
 })
 
 function getRealTurn(theTurn){
-    //turn = theTurn;
+    turn = theTurn;
 }
 
 function getTurn() {
@@ -63,8 +63,7 @@ function getTurn() {
     }).then(async function(respuesta){
         var game = await respuesta.json();
         turn++;
-        //var newTurn = game[0].turn;
-        //getRealTurn(newTurn);
+        //getRealTurn(game)
     }).catch(function(err){
         console.error(err);
     })
