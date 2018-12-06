@@ -96,7 +96,6 @@ function getGames() {
         method: 'get',
         headers: header,
     }).then(async function(respuesta) {
-        console.log(await respuesta);
         var games = await respuesta.json();
         clone(games);
     }).catch(function(err) {

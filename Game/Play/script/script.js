@@ -12,9 +12,8 @@ var second = document.getElementById("2");
 var thrid = document.getElementById("3");
 var fourth = document.getElementById("4");
 var gameId = getCookie('nadal');
-var gameId = 12;
-var turn = 0;
-var actualQuestion = 0;
+var turn = 1;
+var actualQuestion = 1;
 
 var fisrtGrid = document.getElementById('One');
 var secondGrid = document.getElementById('Two');
@@ -23,7 +22,7 @@ var fourthGrid = document.getElementById('Four');
 
 fisrtGrid.addEventListener('click', function () {
     var answer = document.getElementById("1").textContent;
-    createAlert('Correct Answer', 'success', 2000); 
+    createAlert('Correct Answer', 'success', 2000);
     postRequest('https://spinandanswer.herokuapp.com/game/' + gameId, {gameId: gameId, questionId: actualQuestion, answer: answer});
     getTurn();
     getQuestions();
@@ -31,7 +30,7 @@ fisrtGrid.addEventListener('click', function () {
 
 secondGrid.addEventListener('click', function () {
     var answer = document.getElementById("2").textContent;
-    createAlert('Wrong Answer', 'danger', 2000); 
+    createAlert('Wrong Answer', 'danger', 2000);
     postRequest('https://spinandanswer.herokuapp.com/game/' + gameId, {gameId: gameId, questionId: actualQuestion, answer: answer});
     getTurn();
     getQuestions();
@@ -39,27 +38,32 @@ secondGrid.addEventListener('click', function () {
 
 thirdGrid.addEventListener('click', function () {
     var answer = document.getElementById("3").textContent;
-    createAlert('Wrong Answer', 'danger', 2000); 
+    createAlert('Wrong Answer', 'danger', 2000);
     postRequest('https://spinandanswer.herokuapp.com/game/' + gameId, {gameId: gameId, questionId: actualQuestion, answer: answer});
     getTurn();
-    getQuestions(); 
+    getQuestions();
 })
 
 fourthGrid.addEventListener('click', function () {
     var answer = document.getElementById("4").textContent;
-    createAlert('Wrong Answer', 'danger', 2000); 
+    createAlert('Wrong Answer', 'danger', 2000);
     postRequest('https://spinandanswer.herokuapp.com/game/' + gameId, {gameId: gameId, questionId: actualQuestion, answer: answer});
     getTurn();
-    getQuestions(); 
+    getQuestions();
 })
 
-function getQuestions() {
-    fetch('https://spinandanswer.herokuapp.com/game/play/' + gameId,{
+function getRealTurn(theTurn){
+    turn = theTurn;
+}
+
+function getTurn() {
+    fetch('https://spinandanswer.herokuapp.com/game/results/' + gameId,{
         method: 'GET',
         headers: header,
     }).then(async function(respuesta){
-        var questions = await respuesta.json();
-        loadQuestion(questions);
+        var game = await respuesta.json();
+        var newTurn = game[0].turn;
+        getRealTurn(newTurn);
     }).catch(function(err){
         console.error(err);
     })
@@ -81,20 +85,13 @@ function loadQuestion(questions) {
     fourth.textContent = questionsToShow[turn].answer_three;
 }
 
-function getRealTurn(theTurn){
-    turn = theTurn;
-}
-
-function getTurn() {
-    console.log('Game ID: ' + gameId);
-    fetch('https://spinandanswer.herokuapp.com/game/results/' + gameId,{
+function getQuestions() {
+    fetch('https://spinandanswer.herokuapp.com/game/play/' + gameId,{
         method: 'GET',
         headers: header,
     }).then(async function(respuesta){
-        var game = await respuesta.json();
-        //var turn = game[0].turn;
-        turn++;
-        getRealTurn(turn);
+        var questions = await respuesta.json();
+        loadQuestion(questions);
     }).catch(function(err){
         console.error(err);
     })

@@ -4,8 +4,9 @@ header.append("Content-Type", "application/json");
 header.append("Authorization", "Bearer " + cookie);
 
 var buttonRandom = document.getElementById("buttonRandom");
+var myGamesButton = document.getElementById("listButton");
 
-var id = 1;
+var id = 0;
 var rand = 2;
 
 window.addEventListener('load', function() {
@@ -19,6 +20,9 @@ window.addEventListener('load', function() {
     });
 });
 
+myGamesButton.addEventListener('click', function() {
+  location.href = '../List/index.html';
+})
 
 function randomUser(){
     fetch('https://spinandanswer.herokuapp.com/users/randomUser',{
@@ -41,7 +45,8 @@ function createGame(){
     })
         .then(async function(response) {
         var game = await response.json();
-        setCookie('nadal', game[0], 160);
+        setCookie('nadal', game.gameId, 160);
+        location.href = '../Play/index.html';
     })
         .catch(function(err){
         console.error(err);

@@ -44,7 +44,6 @@ window.addEventListener('load', function() {
       headers: header,
   }).then(async function(respuesta) {
     var userid = await respuesta.json();
-    console.log(userid);
     fetch('https://spinandanswer.herokuapp.com/users/' + userid, {
         method: 'GET',
         headers: header,
@@ -194,7 +193,6 @@ function deleteQuestion() {
   var questionId = this.id;
   var r = confirm("Are you sure you want to do it?");
     if (r == true) {
-      console.log('entre');
       fetch('https://spinandanswer.herokuapp.com/questions/' + questionId, {
         method: 'PATCH',
         headers: header,
@@ -211,7 +209,6 @@ function deleteQuestion() {
 
 function modifyQuestion() {
     var questionId = this.id;
-    console.log(questionId);
     setCookie('number', questionId, 168);
     location.href="../../Questions/Modify/index.html";
 }
@@ -222,7 +219,6 @@ find.addEventListener('click', function() {
   var array = [];
   var j = 0;
 
-  console.log(arrayQuestions);
   for(var i=0; i<arrayQuestions.length; i++) {
     index = arrayQuestions[i].id.question.indexOf(text);
 
@@ -236,5 +232,4 @@ find.addEventListener('click', function() {
   document.getElementById("container").innerHTML="";
   document.getElementById("containertwo").innerHTML="";
   clone(array);
-  console.log(array);
 })
