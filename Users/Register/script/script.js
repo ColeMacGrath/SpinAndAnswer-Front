@@ -21,8 +21,8 @@ button.addEventListener('click', function () {
               postRequest('https://spinandanswer.herokuapp.com/users', {name: name2, mail: mail2, username: username2, password: password2, second_mail: alternativeMail2})
               .then(function(data) {
                 setCookie('session', data.token, 168);
-                location.href = '../../Login/Index.html';
-              }) // Result from the `response.json()` call
+                location.href = '../../Login/index.html';
+              })
               .catch(error => alert('Check your data, stupid!'))
             }
 });
