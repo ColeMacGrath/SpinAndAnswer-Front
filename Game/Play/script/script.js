@@ -34,6 +34,7 @@ secondGrid.addEventListener('click', function () {
     postRequest('https://spinandanswer.herokuapp.com/game/' + gameId, {gameId: gameId, questionId: actualQuestion, answer: answer});
     getTurn();
     getQuestions();
+    //location.reload();
 })
 
 thirdGrid.addEventListener('click', function () {
@@ -42,6 +43,7 @@ thirdGrid.addEventListener('click', function () {
     postRequest('https://spinandanswer.herokuapp.com/game/' + gameId, {gameId: gameId, questionId: actualQuestion, answer: answer});
     getTurn();
     getQuestions();
+    //location.reload();
 })
 
 fourthGrid.addEventListener('click', function () {
@@ -50,10 +52,11 @@ fourthGrid.addEventListener('click', function () {
     postRequest('https://spinandanswer.herokuapp.com/game/' + gameId, {gameId: gameId, questionId: actualQuestion, answer: answer});
     getTurn();
     getQuestions();
+    location.reload();
 })
 
 function getRealTurn(theTurn){
-    turn = theTurn;
+    turn = theTurn[0].turn;
 }
 
 function getTurn() {
@@ -62,14 +65,16 @@ function getTurn() {
         headers: header,
     }).then(async function(respuesta){
         var game = await respuesta.json();
-        turn++; 
-        //getRealTurn(game)
+        //turn++; 
+        getRealTurn(game)
     }).catch(function(err){
         console.error(err);
     })
 }
 
 function loadQuestion(questions) {
+  console.log('Turno: ' + turn);
+  if (turn < 10) {
     var str = 'Question ' + turn + ' of 10';
     questionTurn.textContent = str;
     var questionsToShow = questions;
@@ -83,6 +88,10 @@ function loadQuestion(questions) {
     thrid.textContent = questionsToShow[turn].answer_two;
 
     fourth.textContent = questionsToShow[turn].answer_three;
+  } else {
+    location.href = '../List/index.html';
+  }
+
 }
 
 function getQuestions() {
