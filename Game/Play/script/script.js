@@ -12,7 +12,7 @@ var second = document.getElementById("2");
 var thrid = document.getElementById("3");
 var fourth = document.getElementById("4");
 var gameId = getCookie('nadal');
-var turn = 1;
+var turn = 0;
 var actualQuestion = 1;
 
 var fisrtGrid = document.getElementById('One');
@@ -62,7 +62,7 @@ function getTurn() {
         headers: header,
     }).then(async function(respuesta){
         var game = await respuesta.json();
-        turn++;
+        turn++; 
         //getRealTurn(game)
     }).catch(function(err){
         console.error(err);
