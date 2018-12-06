@@ -5,7 +5,7 @@
 }
 .contenedor{
     background-image: url(../img/back.jpg);
-    background-size: cover;
+    background-size: auto;
     background-repeat: no-repeat;
     display: flex;
     flex-direction: column;
@@ -40,7 +40,7 @@ header a{
 header a:hover{
     color: rgb(180, 210, 212);
 }
-.Register{
+.reset {
     margin-top: 130px;
     margin-bottom: 250px;
     display: flex;
@@ -72,7 +72,6 @@ header a:hover{
     border-radius: 50%;
     border: solid #fff 5px;
 }
-
 .wallpaper h3{
     color: #fff;
     text-align: center;

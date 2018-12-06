@@ -39,16 +39,39 @@ const networking = {
 
 
 window.addEventListener('load', function() {
-    fetch('https://spinandanswer.herokuapp.com/questions', {
+  fetch('https://spinandanswer.herokuapp.com/users/token/id', {
+      method: 'get',
+      headers: header,
+  }).then(async function(respuesta) {
+    var userid = await respuesta.json();
+    console.log(userid);
+    fetch('https://spinandanswer.herokuapp.com/users/' + userid, {
         method: 'GET',
         headers: header,
     }).then(async function(respuesta) {
-        var questions = await respuesta.json();
-        arrayQuestions = questions.data;
-        clone(questions.data);
+        var user = await respuesta.json();
+        var route = '';
+        if(user.id[0].admin) {
+          route = 'https://spinandanswer.herokuapp.com/questions';
+        } else {
+          route = 'https://spinandanswer.herokuapp.com/questions/' + userid + '/questions';
+        }
+        fetch(route, {
+            method: 'GET',
+            headers: header,
+        }).then(async function(respuesta) {
+            var questions = await respuesta.json();
+              arrayQuestions = questions.data;
+              clone(questions.data);
+        }).catch(function(err) {
+            console.error(err);
+        });
     }).catch(function(err) {
         console.error(err);
     });
+  }).catch(function(err) {
+      console.error(err);
+  });
 });
 
 function clone(questions) {
@@ -65,7 +88,7 @@ function clone(questions) {
             var button = document.createElement('button');
             button.id = i + 1;
             button.classList.add('bar-item');
-            button.classList.add('white');
+            button.classList.add('red');
             button.classList.add('right');
             button.textContent = 'x';
             button.addEventListener('click', deleteQuestion);
@@ -122,7 +145,7 @@ function clone(questions) {
             var button = document.createElement('button');
             button.id = i + 1;
             button.classList.add('bar-item');
-            button.classList.add('white');
+            button.classList.add('green');
             button.classList.add('right');
             button.textContent = '+';
             button.addEventListener('click', deleteQuestion);
@@ -168,15 +191,22 @@ function clone(questions) {
 }
 
 function deleteQuestion() {
-    var questionId = this.id;
-    fetch('https://spinandanswer.herokuapp.com/questions/' + questionId, {
+  var questionId = this.id;
+  var r = confirm("Are you sure you want to do it?");
+    if (r == true) {
+      console.log('entre');
+      fetch('https://spinandanswer.herokuapp.com/questions/' + questionId, {
         method: 'PATCH',
         headers: header,
-    }).then(function(respuesta) {
+      }).then(function(respuesta) {
         location.reload();
-    }).catch(function(err) {
+      }).catch(function(err) {
         console.error(err);
-    });
+      });
+    } else {
+        alert("Action canceled!");
+        location.reload();
+    }
 }
 
 function modifyQuestion() {

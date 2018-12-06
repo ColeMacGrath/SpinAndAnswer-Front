@@ -4,6 +4,13 @@ header.append("Content-Type", "application/json");
 header.append("Authorization", "Bearer " + cookie);
 var button = document.getElementById('buttonModify');
 
+var buttonLog = document.getElementById('logout');
+
+buttonLog.addEventListener('click', function() {
+  setCookie('session', '', 'Thu, 01 Jan 1970 00:00:00 UTC');
+  location.href = '../../Main-Page/index.html';
+})
+
 button.addEventListener('click', function() {
     var name = document.getElementById('name').value;
     var username = document.getElementById('username').value;
@@ -17,8 +24,16 @@ button.addEventListener('click', function() {
         headers: header,
     }).then(async function(respuesta) {
         var userid = await respuesta.json();
-        postRequest('https://spinandanswer.herokuapp.com/users/' + userid, {name: name, mail: mail, username: username, password: password, second_mail: secondMail, admin: 0, active: 1}) .then(data => alert('Modfied data')) 
+
+        if(name == "" || mail === "" || username == "" || password === "" || secondPass == "" || secondMail === "") {
+          createAlert('There´s some empty data! Make sure to fill in all the text fields ', 'warning', 6000);
+        } else {
+        postRequest('https://spinandanswer.herokuapp.com/users/' + userid, {name: name, mail: mail, username: username, password: password, second_mail: secondMail}) .then(function(data) {
+          alert('Modfied data');
+          location.href = '../Profile/index.html'
+        })
             .catch(error => alert('Check your data, stupid!'))
+          }
     }).catch(function(err) {
         console.error(err);
     });

@@ -19,7 +19,10 @@ button.addEventListener('click', function () {
             createAlert('The fields "Password" does not match! Try to write the same password in both fields', 'warning', 6000);
           } else {
               postRequest('https://spinandanswer.herokuapp.com/users', {name: name2, mail: mail2, username: username2, password: password2, second_mail: alternativeMail2})
-              .then(data => setCookie('session', data.token, 168)) // Result from the `response.json()` call
+              .then(function(data) {
+                setCookie('session', data.token, 168);
+                location.href = '../../Login/Index.html';
+              }) // Result from the `response.json()` call
               .catch(error => alert('Check your data, stupid!'))
             }
 });
@@ -63,7 +66,7 @@ function checkCookie() {
 botonDos.addEventListener('click', function () {
     var email = document.getElementById('mail').value;
     var pass = document.getElementById('password').value;
-    postRequest('http://localhost:3000/login', {mail: email, password: pass})
+    postRequest('https://spinandanswer.herokuapp.com/login', {mail: email, password: pass})
         .then(data => setCookie('session', data.token, 168)) // Result from the `response.json()` call
         .catch(error => console.error(error))
 

@@ -8,6 +8,12 @@ var header = new Headers();
 header.append("Content-Type", "application/json");
 header.append("Authorization", "Bearer " + cookie);
 
+var buttonLog = document.getElementById('logout');
+
+buttonLog.addEventListener('click', function() {
+  setCookie('session', '', 'Thu, 01 Jan 1970 00:00:00 UTC');
+  location.href = '../../Main-Page/index.html';
+})
 
 window.addEventListener('load', function() {
     fetch('https://spinandanswer.herokuapp.com/users/token/id', {

@@ -5,6 +5,13 @@ var header = new Headers();
 header.append("Content-Type", "application/json");
 header.append("Authorization", "Bearer " + cookie);
 
+var button = document.getElementById('logout');
+
+button.addEventListener('click', function() {
+  setCookie('session', '', 'Thu, 01 Jan 1970 00:00:00 UTC');
+  location.href = '../../Main-Page/index.html';
+})
+
 button.addEventListener('click', function () {
     var question = document.getElementById('question').value;
     var answer = document.getElementById('correct').value;
@@ -26,7 +33,9 @@ button.addEventListener('click', function () {
             "answer_two": wrongTwo,
             "answer_three": wrongThree,
             "question_user_id": userid
-        }, header).catch(error => alert('Check your data, stupid!'))
+        }, header).then(function(data){
+          alert('Question Created');
+          location.href = '../List/index.html';
+        }).catch(error => alert('Check your data, stupid!'))
     }).catch(error => alert('Invalid Session'))
-
 });

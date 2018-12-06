@@ -10,6 +10,7 @@ header{
   background-color: rgba(0, 0, 0,.3);
   padding: 1%;
 }
+
 header h1{
   margin-left: 30px;
   font-family: montez;
@@ -107,8 +108,16 @@ input[type=text], input[type=password] {
 	font-size:16px;
 }
 
+.bar .red {
+  background-color: red;
+}
+
+.bar .green {
+  background-color: #4CAF50;
+}
+
 button {
-    background-color: #4CAF50;
+    background-color: red;
     color: white;
     padding: 10px 10px;
     margin: 8px 26px;
@@ -220,7 +229,7 @@ body{
 }
 
 .go {
-  
+
 }
 
 .search-bar a.logo {

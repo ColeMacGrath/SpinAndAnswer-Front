@@ -82,7 +82,7 @@
             rgba(0, 0, 0, 0.10)
         ),
         /* bottom, image */
-        url(../images/dado.png);
+        url(../images/dado.ico);
     background-repeat: no-repeat;
     background-size: cover;
 }

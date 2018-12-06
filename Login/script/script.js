@@ -49,7 +49,9 @@ botonDos.addEventListener('click', function () {
     } else {
       postRequest('https://spinandanswer.herokuapp.com/login', {mail: email, password: pass})
       .then(data => setCookie('session', data.token, 168))
-      .catch(error => console.error(error))
+      .catch(function(error){
+        createAlert('User not found', 'danger', 6000);
+      })
     }
 })
 

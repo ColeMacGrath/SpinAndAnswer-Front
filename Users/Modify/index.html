@@ -5,12 +5,14 @@
         <title>Modify</title>
         <link rel="stylesheet" href="style/styles.css">
         <link rel="stylesheet" href="style/fonts.css">
+        <link rel="stylesheet" href="../../alerts/css/alert.css">
         <link href="https://fonts.googleapis.com/css?family=Josefin+Sans|Montez|Pathway+Gothic+One" rel="stylesheet">
     </head>
     <body>
         <div class="contenedor">
             <header>
-                <a class="back" href="../../Main-Page/index.html">Home</a>
+              <a class="back" href="../../Users/Main-Page/userPage.html">Home</a>
+              <a class="back" id="logout">Logout</a>
             </header>
             <div class="Modify">
                 <article class="wallpaper">
@@ -25,11 +27,14 @@
                         <span class="icon-mail3"></span><input id="secondMail" class="inp" type="mail" name="pass"><br>
                         <button id="buttonModify" type="button" name="button" class="boton">Save</button>
                     </form>
+                    <!-- Alert section -->
+                    <div id="alert-container"><div id="alert-wrapper"></div></div>
                 </article>
             </div>
 
         </div>
         <script src="../../script/script.js"></script>
         <script src="script/script.js"></script>
+        <script type="text/javascript" src="../../alerts/js/alert.js"></script>
     </body>
 </html>

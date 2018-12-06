@@ -5,6 +5,13 @@ header.append("Content-Type", "application/json");
 header.append("Authorization", "Bearer " + cookie);
 var button = document.getElementById('button');
 
+var buttonLog = document.getElementById('logout');
+
+buttonLog.addEventListener('click', function() {
+  setCookie('session', '', 'Thu, 01 Jan 1970 00:00:00 UTC');
+  location.href = '../../Main-Page/index.html';
+})
+
 window.addEventListener('load', function() {
   fetch('https://spinandanswer.herokuapp.com/questions/' + questionId, {
         method: 'GET',
@@ -39,7 +46,10 @@ button.addEventListener("click", function() {
     answer_one: wrongOne,
     answer_two: wrongTwo,
     answer_three: wrongThree
-  }).then(data => alert('Data modified'))
+  }).then(function(data) {
+    alert('Data modified');
+    location.href= '../List/index.html';
+  })
     .catch(error => alert('Check your data, stupid!'))
 });
 

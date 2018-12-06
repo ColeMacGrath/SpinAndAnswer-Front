@@ -3,33 +3,14 @@ var header = new Headers();
 header.append("Content-Type", "application/json");
 header.append("Authorization", "Bearer " + cookie);
 
-var addButton = document.getElementById("addButton");
-var closeButton = document.getElementById("closeButton");
-var modal = document.getElementById('modal-wrapper');
 var find = document.getElementById('buttonFind');
 var arrayFriends = [];
 
 var request = document.getElementById('request');
 var friends = document.getElementById('friends');
 
-addButton.addEventListener('click', openModal);
-closeButton.addEventListener('click', closeModal);
 request.addEventListener('click', filterRequest);
 friends.addEventListener('click', filterFriends);
-
-function openModal() {
-    document.getElementById('modal-wrapper').style.display='none';
-}
-
-function closeModal() {
-    document.getElementById('modal-wrapper').style.display='block';
-}
-
-window.onclick = function(event) {
-    if (event.target == modal) {
-        modal.style.display = "none";
-    }
-}
 
 window.addEventListener('load', function() {
     filterFriends();
@@ -140,7 +121,7 @@ function filterRequest() {
         });
     }).catch(function(err) {
         console.error(err);
-    }); 
+    });
 }
 
 function filterFriends() {
