@@ -53,7 +53,7 @@ fourthGrid.addEventListener('click', function () {
 })
 
 function getRealTurn(theTurn){
-    turn = theTurn;
+    //turn = theTurn;
 }
 
 function getTurn() {
@@ -62,8 +62,9 @@ function getTurn() {
         headers: header,
     }).then(async function(respuesta){
         var game = await respuesta.json();
-        var newTurn = game[0].turn;
-        getRealTurn(newTurn);
+        turn++;
+        //var newTurn = game[0].turn;
+        //getRealTurn(newTurn);
     }).catch(function(err){
         console.error(err);
     })
@@ -104,9 +105,9 @@ window.addEventListener('load', function() {
 
 function postRequest(url, data) {
     return fetch(url, {
-        credentials: 'same-origin', // 'include', default: 'omit'
-        method: 'POST', // 'GET', 'PUT', 'DELETE', etc.
-        body: JSON.stringify(data), // Coordinate the body type with 'Content-Type'
+        credentials: 'same-origin',
+        method: 'POST',
+        body: JSON.stringify(data),
         headers: header,
     })
         .then(response => response.json())
